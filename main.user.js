@@ -3,6 +3,8 @@
 // @version      1.0
 // @description  Сохраняет информацию о выбранном объекте Публичной кадастровой карты
 // @author       MAZUTA
+// @downloadUrl  https://github.com/LegoChelik/cadmaptojson/raw/main/main.user.js
+// @updateUrl    https://github.com/LegoChelik/cadmaptojson/raw/main/main.user.js
 // @match        https://map.nca.by/search
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=nca.by
 // ==/UserScript==
