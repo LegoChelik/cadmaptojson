@@ -16,4 +16,4 @@
 
 
 
-Автор t.me/LegoChelik
+Автор [MAZUTA](https://t.me/LegoChelik)
