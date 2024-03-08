@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Get cadastral object
-// @version      1.0
+// @version      1.0.1
 // @description  Сохраняет информацию о выбранном объекте Публичной кадастровой карты
 // @author       MAZUTA
-// @downloadUrl  https://github.com/LegoChelik/cadmaptojson/raw/main/main.user.js
-// @updateUrl    https://github.com/LegoChelik/cadmaptojson/raw/main/main.user.js
-// @match        https://map.nca.by/search
+// @downloadURL  https://github.com/LegoChelik/cadmaptojson/raw/main/main.user.js
+// @updateURL    https://github.com/LegoChelik/cadmaptojson/raw/main/main.user.js
+// @match        https://map.nca.by/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=nca.by
+// @unwrap
 // ==/UserScript==
 
 const originalFetch = window.fetch;
@@ -38,9 +39,9 @@ window.responseInterceptor = response => {
 };
 
 window.fetch = async (...args) => {
-    args = requestInterceptor(args);
+    args = window.requestInterceptor(args);
     let response = await originalFetch(...args);
-    let r = await responseInterceptor(response.clone());
+    let r = await window.responseInterceptor(response.clone());
     if (r) {
         var a = document.createElement("a");
         a.href = window.URL.createObjectURL(new Blob([r], {type: "text/plain"}));
